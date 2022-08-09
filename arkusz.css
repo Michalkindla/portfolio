@@ -1,0 +1,548 @@
+:root{
+    --violet: #410825;
+    --pink: #EEccf6;
+    --red: #ff4558;
+    --gray: #faf4f0;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: var(--gray);   
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.logo{
+  
+    padding: 10px 10px 0 10px;
+    display: flex;
+    float: left;
+    color: var(--violet);
+    font-size: 1.5rem;
+    filter: blur(0.5);
+    margin-bottom: 0;
+    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+
+}
+.logo p::first-letter{
+    opacity: 0.5;
+    font-size: 3rem;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr .3fr;
+    grid-template-areas: "leftside rightside"
+                          "footer footer";
+    
+}   
+.leftside{
+  grid-area: leftside;
+  background-image: url('images/img-comp.jpg');
+  background-position: top ;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+    color: var(violet);
+    animation: slideInFromLeft 1s;
+
+}
+.rightside{
+  grid-area: rightside;
+  background-image: url('images/divbg.jpg');
+
+    background-position: center ;
+    background-size: 101%;
+    background-repeat: no-repeat;
+    animation: slideInFromRight 1s;
+}
+.navbar ol>li{
+    display: block;
+    float: left;
+    padding: 10px;
+}
+.leftside a:link, a:visited {
+    color:var(--violet);
+    text-decoration: none;
+    
+    font-size: 1.5rem;
+}
+.leftside a {
+    position: relative;
+  }
+  
+ .navbar a::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: var(--violet);
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .3s ease-in-out;
+    }
+  .contact i{
+    font-size: 3rem;
+    padding: 10px 0;
+  }
+  .navbar a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  footer a:link{
+    color: black;
+    text-decoration: none;
+  }
+
+  .card{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2em 0 2em 0;
+    display:block;
+    width: 70%;
+    height: 90vh;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%; 
+    border-radius: 25px;
+    cursor: pointer;
+    animation: slideInFromTop 2s;
+    text-align: center;
+  }
+
+  .wrapper{
+    margin-top: 10vh;
+    background-color: #fefefe;  
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+    border: #DACAB9 4px solid;
+    -webkit-box-shadow: inset 0px 0px 6px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: inset 0px 0px 6px 0px rgba(66, 68, 90, 1);
+    box-shadow: inset 0px 0px 6px 0px rgba(66, 68, 90, 1);
+
+  }
+  .wrapper ul,
+  .wrapper ul>li{
+    display: block;
+    font-size: 1rem;
+    margin-top: 0;
+    padding: 2px;
+  }
+  .wrapper a:link{
+    font-size: 1rem;
+    margin-top: 0;
+    color:var(--vio);
+    border-bottom: black 1px solid;
+  }
+
+  .images{
+    padding: 10px;
+    margin-top: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70% ;
+    min-height: 30vh;
+    border: #DACAB9 4px solid;
+    -webkit-box-shadow: inset 0px 0px 6px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: inset 0px 0px 6px 0px rgba(66, 68, 90, 1);
+    box-shadow: inset 0px 0px 6px 0px rgba(66, 68, 90, 1);
+    animation: myAnim 1s;
+  }
+  .images img{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+  }
+  .inactive{
+    display:none;
+  }
+  .mobile-menu{
+    display: none;
+  }
+  
+  .projects{
+    display:block;
+    width: 70%;
+    height: 90vh;
+    padding: 10px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%; 
+    border-radius: 25px;
+    cursor: pointer;
+    animation: slideInFromTop 2s;
+    text-align: center;  
+  }
+  .projects a:link{
+    color: black;
+    font-size: 1rem;
+  }
+ 
+  footer{
+    grid-area: footer;
+    bottom: 0;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .rightside h1{
+    text-align: center;
+    margin-top: 30vh;
+    margin-bottom: 0;
+  }
+  .flip-cards {
+    cursor: pointer;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    height: 10vh;
+    animation: slideInFromTop 2s;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  .flip-cards i{
+    font-size: 6vh;
+    padding: 5px;
+    color: var(--violet);
+  }
+  .flip-cards:hover .flip-cards-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-cards-inner {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+
+  
+  /* Position the front and back side */
+  .flip-cards-front, .flip-cards-back {
+    position: absolute;
+    margin-top: 5vh;
+    width: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  }
+  .flex{
+    width: 60%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+    max-height: 30vh;
+    }
+ 
+  /* Style the front side (fallback if image is missing) */
+  .flip-cards-front {
+    background-color: #fefefe;
+    color: var(--violet);
+    height: 10vh;
+  }
+  
+  /* Style the back side */
+  .flip-cards-back {
+    background-color: #fefefe;
+    color: var(--violet);
+    transform: rotateY(180deg);
+    height: 10vh;
+    padding: 5px;
+  }
+
+  .flip-cards-back a{
+    color: var(--violet);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  /* This container is needed to position the front and back side */
+  .flip-cards-inner {
+    position: relative;
+    width: 100%;
+    height:10vh;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card {
+    cursor: pointer;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: 40vh;
+    animation: slideInFromTop 2s;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    margin-top: 30vh;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  }
+  
+  .flip-card-front img{
+    height: 100%;
+  }
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #fefefe;
+    /* background-color: var(--gray); */
+    color: var(--violet);
+    transform: rotateY(180deg);
+    height: 100%;
+  }
+  .flip-card-back h1,
+  .flip-card-back p,
+  .flip-card-back ul>li{
+    list-style: none;
+    padding: 5px;
+  }
+
+  
+  
+  @media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+   body{
+      width: 100%;
+    }
+    .logo{
+      display: none;
+    }
+    .grid{
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: .5fr 1fr .1fr;
+      grid-template-areas: "leftside"
+                            "rightside"
+                            "footer";
+     
+    }
+  .rightside{
+    width: 100%;
+    background-position: top ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    
+  }
+  .rightside h1{
+    font-size: 1rem;
+    margin-top: 20vh;
+  }
+ #myLinks{
+  background: rgba(65, 16, 16, 0.3);
+  font-weight: 700;
+ }
+  .wrapper{
+    display: none;
+  
+  }
+  footer{
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+  }
+  .projects .inactive{
+    display: block;
+  }
+  .projects{
+    display: flex;
+    overflow-x: scroll;
+    padding: 24px;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 24px;
+    border-radius: 8px;
+    gap: 12px;
+
+  }
+  .projects .images{
+    background-color: var(--gray);
+    max-height: 20vh;
+    flex: 0 0 100%;
+    padding: 24px;
+    border-radius: 8px;
+    scroll-snap-align: center;
+  }
+  .flip-cards-front, .flip-cards-back {
+    width: 90px;
+  }
+  .images img{
+    max-height: 55%;
+  }
+  .images p,
+  .images a{
+    padding: 5px;
+    font-size: 0.5rem;
+  }
+  .flip-cards-front, .flip-cards-back {
+    margin-top: 20vh;
+  }
+
+  #menu-desktop-list{
+    display: none;
+  }
+  .mobile-menu {
+    animation: slideInFromTop 1s;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+
+ 
+  .mobile-menu #myLinks {
+    display: none;
+  }
+  
+ 
+  .mobile-menu a{
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+
+  .mobile-menu a.icon {
+    display: block;
+
+  }
+  .flip-card{
+    height:20vh; 
+  }
+  .flip-card-front, .flip-card-back{
+    margin-top: 20vh;
+  }
+  .flip-card-front{
+    background-color: #fefefe;
+  }
+ 
+  .flip-card-back p,
+  .flip-card-back ul>li{
+    list-style: none;
+    padding: 1px;
+    font-size: .7rem;
+  }
+  .flip-card-back h1{
+    font-size: 1.2rem;
+  }
+  .mobile-menu a:active {
+    color: black;
+  }
+  }
+
+/* Animations */
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: rotateX(-100deg);
+		transform-origin: top;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateX(0deg);
+		transform-origin: top;
+	}
+}
+@keyframes slideOut{
+ 0%{
+    transform: scale(100%) ;
+ }
+  100%{
+    transform: scale(0);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
